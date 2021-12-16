@@ -3,19 +3,19 @@
 import os.path
 import sys
 
-if len(sys.argv) != 2:
-  print 'This program requires exactly one argument\n'
+if len(sys.argv) != 3:
+  print ('This program requires exactly one argument\n')
   exit(0);
   
 input_file_name = str(sys.argv[1])
   
 
 if (not os.path.isfile(input_file_name) ) :
-  print 'File: ' + input_file_name + ' does not exists!\n';
+  print ('File: ' + input_file_name + ' does not exists!\n')
   exit(0);    
     
 file = open(input_file_name, "rb")
-filew = open("firmware.fpga", "wb")
+filew = open(sys.argv[2], "wb")
 
 
 while True:
